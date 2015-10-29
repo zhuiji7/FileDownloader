@@ -58,18 +58,15 @@ public class ListAdapter extends BaseAdapter{
         }else{
             holder = (Holder)convertView.getTag();
         }
-
         holder.fileName.setText(listdata.get(position).getFileName());
         holder.fileProgress.setProgress(listdata.get(position).getProgress());
         holder.textProgress.setText(listdata.get(position).getProgress() + "%");
+        holder.downloadIcon.setOnCheckedChangeListener(new CheckedChangeListener(position));
         if(listdata.get(position).isOnDownloading()){
             holder.downloadIcon.setChecked(true);
         }else{
             holder.downloadIcon.setChecked(false);
         }
-
-        holder.downloadIcon.setOnCheckedChangeListener(new CheckedChangeListener(position));
-
         return convertView;
     }
 
@@ -106,7 +103,7 @@ public class ListAdapter extends BaseAdapter{
                 listdata.get(position).setOnDownloading(false);
                 downLoadManager.stopTask(listdata.get(position).getTaskID());
             }
-            ListAdapter.this.notifyDataSetInvalidated();
+            ListAdapter.this.notifyDataSetChanged();
         }
 
     }
@@ -125,7 +122,7 @@ public class ListAdapter extends BaseAdapter{
                 if(taskInfo.getTaskID().equals(sqlDownLoadInfo.getTaskID())){
                     taskInfo.setDownFileSize(sqlDownLoadInfo.getDownloadSize());
                     taskInfo.setFileSize(sqlDownLoadInfo.getFileSize());
-                    ListAdapter.this.notifyDataSetInvalidated();
+                    ListAdapter.this.notifyDataSetChanged();
                     break;
                 }
             }
@@ -142,7 +139,7 @@ public class ListAdapter extends BaseAdapter{
             for(TaskInfo taskInfo : listdata){
                 if(taskInfo.getTaskID().equals(sqlDownLoadInfo.getTaskID())){
                     listdata.remove(taskInfo);
-                    ListAdapter.this.notifyDataSetInvalidated();
+                    ListAdapter.this.notifyDataSetChanged();
                     break;
                 }
             }
@@ -154,7 +151,7 @@ public class ListAdapter extends BaseAdapter{
             for(TaskInfo taskInfo : listdata){
                 if(taskInfo.getTaskID().equals(sqlDownLoadInfo.getTaskID())){
                     taskInfo.setOnDownloading(false);
-                    ListAdapter.this.notifyDataSetInvalidated();
+                    ListAdapter.this.notifyDataSetChanged();
                     break;
                 }
             }

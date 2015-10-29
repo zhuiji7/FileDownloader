@@ -58,6 +58,7 @@ public class MainActivity extends Activity {
                             info.setFileName(nameText.getText().toString());
                             /*服务器一般会有个区分不同文件的唯一ID，用以处理文件重名的情况*/
                             info.setTaskID(nameText.getText().toString());
+                            info.setOnDownloading(true);
                             /*将任务添加到下载队列，下载器会自动开始下载*/
                             manager.addTask(nameText.getText().toString(), urlText.getText().toString(), nameText.getText().toString());
                             adapter.addItem(info);
