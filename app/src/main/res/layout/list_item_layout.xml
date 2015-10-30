@@ -30,7 +30,9 @@
         <CheckBox
             android:id="@+id/checkbox"
             android:checked="true"
+            android:button="@drawable/download_checkbox_bg"
             android:layout_width="wrap_content"
+            android:layout_marginRight="5dp"
             android:layout_height="wrap_content" />
     </LinearLayout>
     <ProgressBar

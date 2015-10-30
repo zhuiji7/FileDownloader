@@ -77,7 +77,7 @@ public class MainActivity extends Activity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 manager.changeUser("zhuiji7");
-                                userbutton.setText("zhuiji7");
+                                userbutton.setText("用户: zhuiji7");
                                 adapter.setListdata(manager.getAllTask());
 
                             }
@@ -85,7 +85,7 @@ public class MainActivity extends Activity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             manager.changeUser("luffy");
-                            userbutton.setText("luffy");
+                            userbutton.setText("用户 : luffy");
                             adapter.setListdata(manager.getAllTask());
                         }
                     }).show();
@@ -106,7 +106,7 @@ public class MainActivity extends Activity {
             manager.setSupportBreakpoint(true);
             adapter = new ListAdapter(MainActivity.this,manager);
             listview.setAdapter(adapter);
-            userbutton.setText(manager.getUserID());
+            userbutton.setText("用户 : " + manager.getUserID());
         }
     };
 
