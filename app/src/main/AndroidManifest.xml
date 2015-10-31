@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".download.DownLoadService" />
+        <service android:name="com.zhuiji7.filedownloader.download.DownLoadService" />
     </application>
 
 </manifest>
