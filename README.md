@@ -1,6 +1,8 @@
 # FileDownloader
 ###Android下载框架,支持多用户、多任务、断点续传
 
+![GIF example](demo.gif)
+
 ###使用只需要几行配置代码
 
 #### 1、在androidmanifest.xml里配置DownLoadService
