@@ -50,3 +50,5 @@
   }); 
 ```
   
+  ###流程图
+  ![GIF example](flow.png)
