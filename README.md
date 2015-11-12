@@ -49,6 +49,6 @@
      } 
   }); 
 ```
-  
-  ###流程图
-  ![GIF example](flow.png)
+
+###流程图
+![PNG example](flow.png)
